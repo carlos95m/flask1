@@ -24,7 +24,6 @@ def remove_background():
     # Devolver la imagen resultante sin fondo como respuesta
     return output_data, 200, {'Content-Type': 'image/png'}
 
-
 if __name__ == '__main__':
-    app.run(host='flask-production-082c.up.railway.app', port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
