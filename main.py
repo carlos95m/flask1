@@ -3,6 +3,9 @@ import rembg
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "¡Hola! La API está funcionando correctamente."
 
 @app.route('/remove_background', methods=['POST'])
 def remove_background():
