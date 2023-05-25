@@ -1,3 +1,5 @@
+app.debug = True
+
 from flask import Flask, request
 import rembg
 
@@ -25,5 +27,5 @@ def remove_background():
     return output_data, 200, {'Content-Type': 'image/png'}
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=35)
 
