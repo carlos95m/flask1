@@ -10,7 +10,10 @@ def home():
 @app.route('/remove_background', methods=['POST'])
 def remove_background():
     # Obtener la imagen enviada por la aplicación Android
-    image_file = request.files['image']
+    image_file = request.files.get('image')
+
+    if image_file is None:
+        return "No se proporcionó ningún archivo de imagen", 400
 
     # Leer los datos de la imagen
     image_data = image_file.read()
@@ -24,3 +27,4 @@ def remove_background():
 
 if __name__ == '__main__':
     app.run(host='flask-production-082c.up.railway.app')
+
