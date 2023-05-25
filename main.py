@@ -20,4 +20,4 @@ def remove_background():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='flask-production-082c.up.railway.app', port=80)
