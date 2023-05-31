@@ -26,7 +26,8 @@ def remove_background():
     return output_data, 200, {'Content-Type': 'image/png'}
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Obtener el puerto de la variable de entorno o usar 5000 por defecto
-    app.run(host='0.0.0.0', port=port)
+    port = os.environ.get('PORT')
+    if port is None:
+        port = 5000  # Puerto predeterminado si la variable de entorno no está configurada
 
-
+    app.run(host='0.0.0.0', port=int(port), threaded=True, processes=3, debug=True)
