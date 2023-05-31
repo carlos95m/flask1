@@ -26,7 +26,7 @@ def remove_background():
     return output_data, 200, {'Content-Type': 'image/png'}
 
 if __name__ == '__main__':
-    timeout = 60  # Establecer el tiempo de espera deseado en segundos
+    timeout = 1000  # Establecer el tiempo de espera deseado en segundos
     app.run(host='0.0.0.0', port=35, threaded=True, processes=3, debug=True)
     time.sleep(timeout)  # Agregar una pausa después de ejecutar la aplicación
 
