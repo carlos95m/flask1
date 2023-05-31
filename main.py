@@ -1,6 +1,6 @@
 from flask import Flask, request
 import rembg
-import time
+import os
 
 app = Flask(__name__)
 
@@ -26,7 +26,7 @@ def remove_background():
     return output_data, 200, {'Content-Type': 'image/png'}
 
 if __name__ == '__main__':
-    timeout = 1000  # Establecer el tiempo de espera deseado en segundos
-    app.run(host='0.0.0.0', port=35, threaded=True, processes=3, debug=True)
-    time.sleep(timeout)  # Agregar una pausa después de ejecutar la aplicación
+    port = int(os.environ.get('PORT', 5000))  # Obtener el puerto de la variable de entorno o usar 5000 por defecto
+    app.run(host='0.0.0.0', port=port)
+
 
